@@ -19,14 +19,14 @@ public class ShoppingListSender {
      * @throws java.lang.Exception
      */
 
-    public static final String Account_SID = "ACa94b50415189250a9e5cc8a80b350613";
-    public static final String Auth_TOKEN = "b26d84e82a2007ff64251f0c8748dd84";
+    public static final String Account_SID = "null";
+    public static final String Auth_TOKEN = "null";
 
     public static void main(String[] args) throws Exception {
 
         Twilio.init(Account_SID, Auth_TOKEN);
-        String myPhoneNumber = "+16122632324";
-        String TwilioPhoneNumber = "+18445360440";
+        String myPhoneNumber = "+null";
+        String TwilioPhoneNumber = "null";
 
         String messageBody = "This is a test message from Twilio";
 
@@ -85,9 +85,8 @@ public class ShoppingListSender {
 
 
             TheTable += "\n" + "---------------------------------------------------";
-            //Message message = Message.creator(new PhoneNumber(myPhoneNumber), new PhoneNumber(TwilioPhoneNumber), TheTable).create();
+            Message message = Message.creator(new PhoneNumber(myPhoneNumber), new PhoneNumber(TwilioPhoneNumber), TheTable).create();
 
-            //System.out.println(TheTable);
             scan.close();
 
         } catch (FileNotFoundException e) {
